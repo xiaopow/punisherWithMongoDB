@@ -2,7 +2,7 @@ var Hapi = require('hapi');
 var server = new Hapi.Server();
 
 server.connection({
-  host: '0.0.0.0',
+  host: '127.0.0.1',
   port: 8000,
   routes: {cors: true}
 });
@@ -11,7 +11,7 @@ var plugins = [
   {
     register: require('hapi-mongodb'),
     options: {
-      "url":"mongodb://localhost:27017/punisher",
+      "url":"mongodb://127.0.0.1:27017/punisher",
       "settings": {db: {
         "native_parser": false}}
     }
